@@ -1,10 +1,16 @@
 from flask import Flask , render_template
 
 from wtforms_fields import *
+from models import *
 
 app = Flask(__name__)
 app.secret_key = 'replace key later'
 
+#configure database
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ozawkdoyvqhipc:f35523972b309aab0ab3a73978616ee325ed23ae5808eb143c1174a77ff7a56d@ec2-54-197-234-117.compute-1.amazonaws.com:5432/drrtj2v553ai9'
+
+db = SQLAlchemy(app)
 
 @app.route("/",methods=['GET','POST'])
 def index():
