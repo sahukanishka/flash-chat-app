@@ -4,4 +4,21 @@
 
 {% block content %}
     <h1>Get started</h1>
+
+    <form>
+        <div>
+            {{form.username(class = "form_control" , placeholder ='username')}}
+        </div>
+        <div>
+            {{form.password(class = "form_control" , placeholder ='Password' )}}
+        </div>
+        <div>
+            {{form.confirm_password(class = "form_control" , placeholder ='Re-Type Password')}}
+        </div>
+        {{form.submit_button}}
+        
+        {{ form.csrf_token}}
+    </form>
+
+
     {% endblock %}
